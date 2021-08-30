@@ -44,5 +44,8 @@ function watchTask() {
   watch('src/js/**/*.js', series(jsTask, browserSyncReload))
 }
 
+// Gulp Build Task
+exports.build = series(sassTask, jsTask)
+
 // Default Gulp Task
 exports.default = series(sassTask, jsTask, browserSyncServe, watchTask)
