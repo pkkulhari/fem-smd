@@ -39,7 +39,7 @@ function imgTask() {
 // Browsersync
 function browserSyncServe(cb) {
   browsersync.init({
-    server: { baseDir: '.' },
+    server: { baseDir: 'dist' },
     browser: 'firefox',
     notify: false,
   })
