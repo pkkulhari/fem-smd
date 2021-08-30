@@ -1,0 +1,22 @@
+@use '../utils' as *;
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.1;
+  color: var(--text2);
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  @include breakpoint(large) {
+    font-size: 1.75rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}

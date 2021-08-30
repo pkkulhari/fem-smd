@@ -1,0 +1,162 @@
+@use '../utils' as *;
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5625rem;
+  justify-content: space-between;
+
+  @include breakpoint(large) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1.5rem;
+  flex-direction: column;
+  background-color: var(--card);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-top: 4px solid;
+  border-radius: 0.25rem;
+  min-width: 15.5rem;
+  flex-grow: 1;
+  flex-basis: 32%;
+
+  @include breakpoint(large) {
+    flex-basis: 0;
+  }
+
+  &:hover {
+    background-color: var(--card-hover);
+  }
+
+  &__plateform {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &--facebook {
+    border-color: var(--facebook);
+  }
+
+  &--twitter {
+    border-color: var(--twitter);
+  }
+
+  &--instagram {
+    border: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: var(--instagram);
+      height: 4px;
+      width: 100%;
+      top: 0;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+
+  &--youtube {
+    border-color: var(--youtube);
+  }
+
+  &__icon {
+    width: 1.1rem;
+  }
+
+  &__followers {
+    text-align: center;
+  }
+
+  &__follower-count {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+    color: var(--text2);
+  }
+
+  &__follower-label {
+    font-weight: 400;
+    letter-spacing: 0.27rem;
+  }
+
+  &__conversion {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    &--positive {
+      color: var(--lime-green);
+    }
+
+    &--negative {
+      color: var(--bright-red);
+    }
+
+    & > * {
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+}
+
+.cards-overview-today {
+  position: relative;
+  margin-top: 6.5rem;
+
+  h2 {
+    position: absolute;
+    top: -3.3rem;
+    font-size: 1.25rem;
+
+    @include breakpoint(large) {
+      font-size: 1.375em;
+    }
+  }
+
+  .card {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & > div:nth-child(even) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    &__label {
+      font-size: 0.8rem;
+    }
+
+    &__icon {
+      img {
+        width: 1.1rem;
+      }
+    }
+
+    &__count {
+      font-size: 2rem;
+      line-height: 2rem;
+      color: var(--text2);
+    }
+
+    &__conversion {
+      align-items: flex-end;
+      height: 100%;
+
+      img {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}

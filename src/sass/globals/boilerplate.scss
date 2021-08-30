@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter);
+  background: var(--bg);
+  color: var(--text1);
+  height: 100%;
+  padding-top: 3rem;
+}
